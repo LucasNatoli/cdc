@@ -25,7 +25,7 @@
   <main class="container">
 
 	<!-- Modal Login -->
-	<div class="row">
+	<div class="row hide">
 		<div class="col m2 l3 xl4 hide-on-small-only"></div>
 		<div class="col s12 m8 l6 xl4">
 			<div class="card z-depth-3 green">
@@ -44,6 +44,34 @@
 				</div>
 				<div class="card-action grey lighten-2 right-align">
 					<button  class="waves-effect waves-light btn" id="ingresar">Ingresar</button>
+				</div>
+			</div>
+		</div>
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+	</div>
+
+	<!-- Verificar Cuenta -->
+	<div class="row">
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+		<div class="col s12 m8 l6 xl4">
+			<div class="card z-depth-3 green">
+				<div class="center-align" style="padding:20px">
+					<span class="card-title">Verificar Cuenta</span>
+				</div>
+				<div class="card-content white">
+					<div style="padding:5px">
+						<p>Se envió un código de activacion por SMS al nro:</p>
+						<p><b>(11) 3123-1234</b></p>
+						<p>Ingrese el codigo recibido para terminar de verificar su cuenta</p>
+
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="pin" type="number" class="validate">
+						<label for="pin">PIN</label>
+					</div>
+				</div>
+				<div class="card-action grey lighten-2 right-align">
+					<button  class="waves-effect waves-light btn" id="enviar_pin">Enviar</button>
 				</div>
 			</div>
 		</div>
