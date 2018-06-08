@@ -1,0 +1,19 @@
+{
+  "name": "cdc",
+  "version": "0.0.1",
+  "description": "Central de Cobranzas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasNatoli/cdc.git"
+  },
+  "author": "Lucas Natoli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasNatoli/cdc/issues"
+  },
+  "homepage": "https://github.com/LucasNatoli/cdc#readme"
+}
