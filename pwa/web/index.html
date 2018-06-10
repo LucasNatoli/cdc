@@ -34,12 +34,12 @@
 				</div>
 				<div class="card-content white">
 					<div class="input-field">
-						<input placeholder="" id="dni" type="number" class="validate">
-						<label for="dni">Nro. de DNI</label>
+						<input placeholder="" id="login-dni" type="number" class="validate">
+						<label for="login-dni">Nro. de DNI</label>
 					</div>
 					<div class="input-field">
-						<input placeholder="" id="password" type="password" class="validate">
-						<label for="password">Password</label>
+						<input placeholder="" id="login-password" type="password" class="validate">
+						<label for="login-password">Password</label>
 					</div>
 				</div>
 				<div class="card-action grey lighten-2 right-align">
@@ -51,7 +51,7 @@
 	</div>
 
 	<!-- Verificar Cuenta -->
-	<div class="row">
+	<div class="row hide">
 		<div class="col m2 l3 xl4 hide-on-small-only"></div>
 		<div class="col s12 m8 l6 xl4">
 			<div class="card z-depth-3 green">
@@ -66,8 +66,8 @@
 
 					</div>
 					<div class="input-field">
-						<input placeholder="" id="pin" type="number" class="validate">
-						<label for="pin">PIN</label>
+						<input placeholder="" id="verify-pin" type="number" class="validate">
+						<label for="verify-pin">PIN</label>
 					</div>
 				</div>
 				<div class="card-action grey lighten-2 right-align">
@@ -78,6 +78,51 @@
 		<div class="col m2 l3 xl4 hide-on-small-only"></div>
 	</div>
 
+	<!-- Form Registro -->
+	<div class="row">
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+		<div class="col s12 m8 l6 xl4">
+			<div class="card z-depth-3 green">
+				<div class="center-align" style="padding:20px">
+					<span class="card-title">Crear Cuenta</span>
+				</div>
+				<div class="card-content white">
+					<div style="padding:5px">
+						<p>Completá la siguiente información para crear tu cuenta.</p>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-dni" type="number" class="validate">
+						<label for="reg-dni">DNI</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-nombre" type="text" class="validate">
+						<label for="reg-nombre">Nombre y Apellido</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-celular" type="number" class="validate">
+						<label for="reg-celular">Celular</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-email" type="email" class="validate">
+						<label for="reg-email">Email</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-clave" type="password" class="validate">
+						<label for="reg-clave">Clave</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-clave-confirmacion" type="password" class="validate">
+						<label for="reg-clave-confirmacion">Confirmar Clave</label>
+					</div>
+
+				</div>
+				<div class="card-action grey lighten-2 right-align">
+					<button  class="waves-effect waves-light btn" id="reg-enviar">Enviar</button>
+				</div>
+			</div>
+		</div>
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+	</div>
   </main>
   <div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">
