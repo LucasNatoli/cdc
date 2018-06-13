@@ -11,16 +11,35 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 </head>
 <body>
+	<!-- Navbar -->
+	<nav class="hide" id="nav_bar">
+		<div class="nav-wrapper green darken-2">
+			<a href="#" class="brand-logo left" style="padding-left:9px">Central de Cobranzas</a>
+			<ul class="right">
+			<li><a href="#"><i class="material-icons">refresh</i></a></li>
+			</ul>
+		</div>
+	</nav>
 
-  <nav class="hide">
-    <div class="nav-wrapper green darken-2">
-      <a href="#" class="brand-logo left" style="padding-left:9px">Central de Cobranzas</a>
-	  <ul class="right">
-        <li><a href="#"><i class="material-icons">refresh</i></a></li>
-      </ul>
-
-    </div>
-  </nav>
+	<!-- Drawer -->
+	<div id="drawer" class="hide">
+		<ul id="slide-out" class="sidenav">
+			<li><div class="user-view">
+			  <div class="background">
+			    <img src="images/office.jpg">
+			  </div>
+			  <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+			  <a href="#name"><span class="name" id="drawer-nombre">John Doe</span></a>
+			  <a href="#email"><span class="email" id="drawer-dni">jdandturk@gmail.com</span></a>
+			</div></li>
+			<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+			<li><a href="#!">Second Link</a></li>
+			<li><div class="divider"></div></li>
+			<li><a class="subheader">Subheader</a></li>
+			<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+		</ul>
+	  	<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+	</div>
 
   <main class="container">
 

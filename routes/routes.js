@@ -26,7 +26,11 @@ var appRouter = function (app) {
                 sess.id = results[0].id;
                 sess.nombre = results[0].nombre;
                 sess.dni = results[0].dni;
-                res.status(200).end();
+                var resData = {
+                    nombre: sess.nombre,
+                    dni: sess.dni
+                }
+                res.status(200).send(resData);
             };
         });
     });
