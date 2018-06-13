@@ -9,8 +9,24 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+	<style media="screen">
+	.preloader-background {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #eee;
+
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	</style>
 </head>
 <body>
+
 	<!-- Navbar -->
 	<nav class="hide" id="nav_bar">
 		<div class="nav-wrapper green darken-2">
@@ -42,9 +58,23 @@
 	</div>
 
   <main class="container">
+	  <!-- Preloader -->
+	  <div class="preloader-background">
+  		<div class="preloader-wrapper big active">
+  	      <div class="spinner-layer spinner-green-only">
+  	        <div class="circle-clipper left">
+  	          <div class="circle"></div>
+  	        </div><div class="gap-patch">
+  	          <div class="circle"></div>
+  	        </div><div class="circle-clipper right">
+  	          <div class="circle"></div>
+  	        </div>
+  	      </div>
+  	    </div>
+  	</div>
 
 	<!-- Modal Login -->
-	<div class="row" id="login_row">
+	<div class="row hide" id="login_row">
 		<div class="col m2 l3 xl4 hide-on-small-only"></div>
 		<div class="col s12 m8 l6 xl4">
 			<div class="card z-depth-3 green">
@@ -73,12 +103,6 @@
 		</div>
 		<div class="col m2 l3 xl4 hide-on-small-only"></div>
 	</div>
-    <div class="loader">
-      <svg viewBox="0 0 32 32" width="32" height="32">
-        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
-      </svg>
-    </div>
-
   </main>
 
 

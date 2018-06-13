@@ -5,7 +5,7 @@
     var app = {
         isLoading: true,
         userData: {},
-        spinner: document.querySelector('.loader'),
+        preloader: document.querySelector('.preloader-background'),
         loginRow: document.getElementById('login_row'),
         loginError: document.getElementById('login_error'),
         navBar: document.getElementById('nav_bar'),
@@ -30,6 +30,8 @@
     document.addEventListener('DOMContentLoaded', function(){
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems);
+        app.preloader.classList.add('hide');
+        app.showLoginRow();
     });
     /*****************************************************************************
     *
@@ -37,13 +39,17 @@
     *
     ****************************************************************************/
 
-    app.hideloginRow = function () {
-        app.loginRow.setAttribute('hidden', true);
+    app.showLoginRow = function () {
+        app.loginRow.classList.remove("hide");
+    };
+    app.hideLoginRow = function () {
+        app.loginRow.classList.add("hide");
     };
 
     app.showLoginError = function () {
         app.loginError.classList.remove("hide");
     };
+
     app.showNavigation = function() {
         app.navBar.classList.remove("hide");
         app.drawer.classList.remove("hide");
@@ -58,7 +64,7 @@
           if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 app.userData = JSON.parse(request.response);
-                app.hideloginRow();
+                app.hideLoginRow();
                 app.showNavigation();
               // var response = JSON.parse(request.response);
               // var results = response.query.results;
