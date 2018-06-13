@@ -5,7 +5,8 @@
     var app = {
         isLoading: true,
         spinner: document.querySelector('.loader'),
-        loginRow: document.getElementById('login_row')
+        loginRow: document.getElementById('login_row'),
+        loginError: document.getElementById('login_error')
     };
 
     /*****************************************************************************
@@ -25,6 +26,10 @@
         app.loginRow.setAttribute('hidden', true);
     };
 
+    app.showLoginError = function () {
+        app.loginError.classList.remove("hide");
+    };
+
     app.verificarCuenta = function (data){
         var url = 'http://localhost:3000/accounts/verificar'
         var request = new XMLHttpRequest();
@@ -39,6 +44,12 @@
               // results.created = response.query.created;
               // app.updateForecastCard(results);
             }
+            if (request.status === 401) {
+                app.showLoginError();
+            }
+            if (request.status === 500) {
+                app.showLoginError();
+            }            
           } else {
             // // Return the initial weather forecast since no data is available.
             // app.updateForecastCard(initialWeatherForecast);
