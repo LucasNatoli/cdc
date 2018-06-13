@@ -1,6 +1,8 @@
 var appRouter = function (app) {
-  app.get("/hello", function(req, res) {
-    res.status(200).send("Welcome to our restful API");
+  app.post("/accounts/verificar", function(req, res) {
+      var user_id = req.body.dni;
+      var token = req.body.clave;
+      console.log(user_id, token);
   });
 }
 
