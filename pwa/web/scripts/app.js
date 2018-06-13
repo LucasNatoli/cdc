@@ -45,20 +45,24 @@
     app.hideLoginRow = function () {
         app.loginRow.classList.add("hide");
     };
-
     app.showLoginError = function () {
         app.loginError.classList.remove("hide");
     };
-
     app.showNavigation = function() {
         app.navBar.classList.remove("hide");
         app.drawer.classList.remove("hide");
         app.drawerNombre.textContent = app.userData.nombre;
         app.drawerDni.textContent = app.userData.dni;
-    }
+    };
+
+    /*****************************************************************************
+    *
+    * Comunicacion con el servidor
+    *
+    ****************************************************************************/
 
     app.verificarCuenta = function (data){
-        var url = 'accounts/verificar'
+        var url = 'accounts/login'
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
           if (request.readyState === XMLHttpRequest.DONE) {
@@ -66,11 +70,6 @@
                 app.userData = JSON.parse(request.response);
                 app.hideLoginRow();
                 app.showNavigation();
-              // var response = JSON.parse(request.response);
-              // var results = response.query.results;
-              // results.key = key;
-              // results.label = label;
-              // results.created = response.query.created;
               // app.updateForecastCard(results);
             }
             if (request.status === 401) {

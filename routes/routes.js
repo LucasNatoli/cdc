@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 
 var appRouter = function (app) {
 
-    app.post("/accounts/verificar", function(req, res) {
+    app.post("/accounts/login", function(req, res) {
         var dni = req.body.dni;
         var password = req.body.password;
         var sql = "SELECT id, nombre, dni FROM cuenta WHERE dni=" + dni + " AND clave ='" + password + "'"
