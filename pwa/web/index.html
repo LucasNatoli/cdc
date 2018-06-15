@@ -27,15 +27,12 @@
 </head>
 <body>
 
-	<!-- Navbar -->
-	<nav class="hide" id="nav_bar">
-		<div class="nav-wrapper green darken-2">
-			<a href="#" class="brand-logo left" style="padding-left:9px">Central de Cobranzas</a>
-			<ul class="right">
-			<li><a href="#"><i class="material-icons">refresh</i></a></li>
-			</ul>
-		</div>
-	</nav>
+  <nav class="">
+    <div class="nav-wrapper green darken-2">
+      <a href="#" class="brand-logo left" style="padding-left:9px">Central de Cobranzas</a>
+	  <ul class="right">
+        <li><a href="#"><i class="material-icons">refresh</i></a></li>
+      </ul>
 
 	<!-- Drawer -->
 	<div id="drawer" class="hide">
@@ -58,23 +55,14 @@
 	</div>
 
   <main class="container">
-	  <!-- Preloader -->
-	  <div class="preloader-background">
-  		<div class="preloader-wrapper big active">
-  	      <div class="spinner-layer spinner-green-only">
-  	        <div class="circle-clipper left">
-  	          <div class="circle"></div>
-  	        </div><div class="gap-patch">
-  	          <div class="circle"></div>
-  	        </div><div class="circle-clipper right">
-  	          <div class="circle"></div>
-  	        </div>
-  	      </div>
-  	    </div>
-  	</div>
-
+  	<div class="row center-align" style="padding-top:50px">
+		<i class="material-icons" style="font-size: 96px;">looks</i>
+		<div class="col s12 m8 l6 xl4">
+			<h5>Ud no registra deudas o acciones pendientes</h5>
+		</div>
+	</div>
 	<!-- Modal Login -->
-	<div class="row hide" id="login_row">
+	<div class="row hide">
 		<div class="col m2 l3 xl4 hide-on-small-only"></div>
 		<div class="col s12 m8 l6 xl4">
 			<div class="card z-depth-3 green">
@@ -83,12 +71,12 @@
 				</div>
 				<div class="card-content white">
 					<div class="input-field">
-						<input placeholder="" id="login_dni" type="number" class="validate">
-						<label for="dni">Nro. de DNI</label>
+						<input placeholder="" id="login-dni" type="number" class="validate">
+						<label for="login-dni">Nro. de DNI</label>
 					</div>
 					<div class="input-field">
-						<input placeholder="" id="login_password" type="password" class="validate">
-						<label for="password">Password</label>
+						<input placeholder="" id="login-password" type="password" class="validate">
+						<label for="login-password">Password</label>
 					</div>
 					<div class="row hide" id="login_error">
 						<div class="col s12">
@@ -98,6 +86,80 @@
 				</div>
 				<div class="card-action grey lighten-2 right-align">
 					<button  class="waves-effect waves-light btn" id="btn_ingresar">Ingresar</button>
+				</div>
+			</div>
+		</div>
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+	</div>
+
+	<!-- Verificar Cuenta -->
+	<div class="row hide">
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+		<div class="col s12 m8 l6 xl4">
+			<div class="card z-depth-3 green">
+				<div class="center-align" style="padding:20px">
+					<span class="card-title">Verificar Cuenta</span>
+				</div>
+				<div class="card-content white">
+					<div style="padding:5px">
+						<p>Se envió un código de activacion por SMS al nro:</p>
+						<p><b>(11) 3123-1234</b></p>
+						<p>Ingrese el codigo recibido para terminar de verificar su cuenta</p>
+
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="verify-pin" type="number" class="validate">
+						<label for="verify-pin">PIN</label>
+					</div>
+				</div>
+				<div class="card-action grey lighten-2 right-align">
+					<button  class="waves-effect waves-light btn" id="enviar_pin">Enviar</button>
+				</div>
+			</div>
+		</div>
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+	</div>
+
+	<!-- Form Registro -->
+	<div class="row hide">
+		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+		<div class="col s12 m8 l6 xl4">
+			<div class="card z-depth-3 green">
+				<div class="center-align" style="padding:20px">
+					<span class="card-title">Crear Cuenta</span>
+				</div>
+				<div class="card-content white">
+					<div style="padding:5px">
+						<p>Completá la siguiente información para crear tu cuenta.</p>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-dni" type="number" class="validate">
+						<label for="reg-dni">DNI</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-nombre" type="text" class="validate">
+						<label for="reg-nombre">Nombre y Apellido</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-celular" type="number" class="validate">
+						<label for="reg-celular">Celular</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-email" type="email" class="validate">
+						<label for="reg-email">Email</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-clave" type="password" class="validate">
+						<label for="reg-clave">Clave</label>
+					</div>
+					<div class="input-field">
+						<input placeholder="" id="reg-clave-confirmacion" type="password" class="validate">
+						<label for="reg-clave-confirmacion">Confirmar Clave</label>
+					</div>
+
+				</div>
+				<div class="card-action grey lighten-2 right-align">
+					<button  class="waves-effect waves-light btn" id="reg-enviar">Enviar</button>
 				</div>
 			</div>
 		</div>
