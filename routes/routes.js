@@ -12,6 +12,7 @@ var appRouter = function (app) {
         var dni = req.body.dni;
         var password = req.body.password;
         var sql = "SELECT id, nombre, dni FROM cuenta WHERE dni=" + dni + " AND clave ='" + password + "'"
+        var sess = req.session;
 
         connection.query(sql, function (error, results, fields) {
             if (error) {
@@ -22,7 +23,6 @@ var appRouter = function (app) {
             if (results.length!=1) {
                 res.status(401).end();
             } else {
-                var sess = req.session;
                 sess.id = results[0].id;
                 sess.nombre = results[0].nombre;
                 sess.dni = results[0].dni;
@@ -33,6 +33,14 @@ var appRouter = function (app) {
                 res.status(200).send(resData);
             };
         });
+    });
+
+    app.post("/accounts/register", function (req, res) {
+        var dni = req.body.dni;
+        var nombre = req.body.nombre;
+        var email = req.body.email;
+        var password = req.body.password;
+        var celular = req.body.celular;
     });
 
     app.get("/checkpoint", function(req, res) {
