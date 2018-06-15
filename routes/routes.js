@@ -38,9 +38,11 @@ var appRouter = function (app) {
     app.post("/accounts/register", function (req, res) {
         var dni = req.body.dni;
         var nombre = req.body.nombre;
+        var celular = req.body.celular;
         var email = req.body.email;
         var password = req.body.password;
-        var celular = req.body.celular;
+        var sql = "INSERT INTO cuenta (dni, nombre, celular, email, password, estado) VALUES (" + dni + ",'" + nombre + "','" + celular + "','" + email + "','" + password + "', 0)";
+        console.log(sql);
     });
 
     app.get("/checkpoint", function(req, res) {

@@ -26,13 +26,15 @@
 	</style>
 </head>
 <body>
-
-  <nav class="">
-    <div class="nav-wrapper green darken-2">
-      <a href="#" class="brand-logo left" style="padding-left:9px">Central de Cobranzas</a>
-	  <ul class="right">
-        <li><a href="#"><i class="material-icons">refresh</i></a></li>
-      </ul>
+	<!-- NavBar -->
+	<nav class="hide" id="nav_bar">
+ 		<div class="nav-wrapper green darken-2">
+ 			<a href="#" class="brand-logo left" style="padding-left:9px">Central de Cobranzas</a>
+ 			<ul class="right">
+ 			<li><a href="#"><i class="material-icons">refresh</i></a></li>
+ 			</ul>
+ 		</div>
+ 	</nav>
 
 	<!-- Drawer -->
 	<div id="drawer" class="hide">
@@ -55,16 +57,34 @@
 	</div>
 
   <main class="container">
-  	<div class="row center-align" style="padding-top:50px">
+  	  <!-- Preloader -->
+	  <div class="preloader-background">
+  		<div class="preloader-wrapper big active">
+  	      <div class="spinner-layer spinner-green-only">
+  	        <div class="circle-clipper left">
+  	          <div class="circle"></div>
+  	        </div><div class="gap-patch">
+  	          <div class="circle"></div>
+  	        </div><div class="circle-clipper right">
+  	          <div class="circle"></div>
+  	        </div>
+  	      </div>
+  	    </div>
+  	</div>
+
+	<!-- Home Vacia -->
+  	<div class="row center-align hide" id="home-row" style="padding-top:50px">
+
 		<i class="material-icons" style="font-size: 96px;">looks</i>
 		<div class="col s12 m8 l6 xl4">
 			<h5>Ud no registra deudas o acciones pendientes</h5>
 		</div>
 	</div>
+
 	<!-- Modal Login -->
-	<div class="row hide">
-		<div class="col m2 l3 xl4 hide-on-small-only"></div>
-		<div class="col s12 m8 l6 xl4">
+	<div class="row hide" id="login-row">
+		<div class="col m2 l3 xl3 hide-on-small-only"></div>
+		<div class="col s12 m8 l6 xl6">
 			<div class="card z-depth-3 green">
 				<div class="center-align" style="padding:20px">
 					<span class="card-title">Iniciar Sesion</span>
@@ -78,22 +98,29 @@
 						<input placeholder="" id="login-password" type="password" class="validate">
 						<label for="login-password">Password</label>
 					</div>
-					<div class="row hide" id="login_error">
+					<div class="row hide" id="login-error">
 						<div class="col s12">
 							<span class="red-text">Error de login</span>
 						</div>
 					</div>
 				</div>
 				<div class="card-action grey lighten-2 right-align">
-					<button  class="waves-effect waves-light btn" id="btn_ingresar">Ingresar</button>
+					<div class="row valign-wrapper" style="margin-bottom:0px">
+						<div class="col s6">
+							<a href="#" class="blue-text">Registrarme</a>
+						</div>
+						<div class="col s6">
+							<button  class="waves-effect waves-light btn" id="btn_ingresar">Ingresar</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col m2 l3 xl4 hide-on-small-only"></div>
+		<div class="col m2 l3 xl3 hide-on-small-only"></div>
 	</div>
 
 	<!-- Verificar Cuenta -->
-	<div class="row hide">
+	<div class="row hide" id="register-row">
 		<div class="col m2 l3 xl4 hide-on-small-only"></div>
 		<div class="col s12 m8 l6 xl4">
 			<div class="card z-depth-3 green">
@@ -113,7 +140,7 @@
 					</div>
 				</div>
 				<div class="card-action grey lighten-2 right-align">
-					<button  class="waves-effect waves-light btn" id="enviar_pin">Enviar</button>
+					<button  class="waves-effect waves-light btn" id="enviar_pin" style="width:100%">Enviar</button>
 				</div>
 			</div>
 		</div>
@@ -156,7 +183,11 @@
 						<input placeholder="" id="reg-clave-confirmacion" type="password" class="validate">
 						<label for="reg-clave-confirmacion">Confirmar Clave</label>
 					</div>
-
+					<div class="row hide" id="reg-error">
+						<div class="col s12">
+							<span class="red-text">Error de Registracion</span>
+						</div>
+					</div>
 				</div>
 				<div class="card-action grey lighten-2 right-align">
 					<button  class="waves-effect waves-light btn" id="reg-enviar">Enviar</button>
