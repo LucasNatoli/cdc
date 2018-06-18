@@ -6,6 +6,7 @@
         isLoading: true,
         userData: {},
         preloader: document.querySelector('.preloader-background'),
+        verifyRow: document.getElementById('verify-row'),
         loginRow: document.getElementById('login-row'),
         loginError: document.getElementById('login-error'),
         registerRow: document.getElementById('register-row'),
@@ -56,13 +57,24 @@
     *
     ****************************************************************************/
 
+
+    app.showVerifyRow = function () {
+        app.verifyRow.classList.remove("hide");
+    };
+    app.hideVerifyRow = function () {
+        app.verifyRow.classList.add("hide");
+    };
+    app.showVerifyError = function () {
+        app.verifyRow.classList.remove("hide");
+    };
+
     app.showRegisterRow = function () {
         app.registerRow.classList.remove("hide");
     };
     app.hideRegisterRow = function () {
         app.registerRow.classList.add("hide");
     };
-    app.showTergisterError = function () {
+    app.showRegisterError = function () {
         app.registerRow.classList.remove("hide");
     };
 
@@ -87,15 +99,20 @@
     * Comunicacion con el servidor
     *
     ****************************************************************************/
+
     app.registrarCuenta = function (data){
         var url = 'accounts/register'
         var request = new XMLHttpRequest();
+        console.log('url', url);
         request.onreadystatechange = function() {
           if (request.readyState === XMLHttpRequest.DONE) {
+              console.log('Ready', request.readyState);
+              console.log('Status', request.status);
             if (request.status === 200) {
-                app.userData = JSON.parse(request.response);
+
+                console.log(request.response);
                 app.hideRegisterRow();
-                app.showHome();
+                app.showVerifyRow();
               // app.updateForecastCard(results);
             }
             if (request.status === 401) {

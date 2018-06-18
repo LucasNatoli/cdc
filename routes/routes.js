@@ -14,9 +14,9 @@ var appRouter = function (app) {
         var sql = "SELECT id, nombre, dni FROM cuenta WHERE dni=" + dni + " AND clave ='" + password + "'"
         var sess = req.session;
 
-        connection.query(sql, function (error, results, fields) {
-            if (error) {
-                console.log(error); //TODO: Mejorar el manejo de errores
+        connection.query(sql, function (err, results, fields) {
+            if (err) {
+                console.log(err); //TODO: Mejorar el manejo de errores
                 res.status(500).end();
                 return;
             };
@@ -41,8 +41,15 @@ var appRouter = function (app) {
         var celular = req.body.celular;
         var email = req.body.email;
         var password = req.body.password;
-        var sql = "INSERT INTO cuenta (dni, nombre, celular, email, password, estado) VALUES (" + dni + ",'" + nombre + "','" + celular + "','" + email + "','" + password + "', 0)";
-        console.log(sql);
+        var sql = "INSERT INTO cuenta (dni, nombre, celular, email, clave, estado) VALUES (" + dni + ",'" + nombre + "','" + celular + "','" + email + "','" + password + "', 0)";
+        connection.query(sql, function(err, result){
+            if (err) {
+                console.log(err); //TODO: Mejorar el manejo de errores
+                res.status(500).end();
+                return;
+            };
+            res.status(200).send('ok');
+        });
     });
 
     app.get("/checkpoint", function(req, res) {
