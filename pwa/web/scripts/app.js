@@ -21,6 +21,10 @@
     * Event listeners for UI elements
     *
     ****************************************************************************/
+    document.getElementById('login-register').addEventListener('click', function() {
+        app.hideLoginRow()
+        app.showRegisterRow()
+    });
     document.getElementById('btn_ingresar').addEventListener('click', function() {
         var data = JSON.stringify({
             "dni": document.getElementById('login-dni').value,
@@ -51,6 +55,16 @@
     * UI elements manipulation
     *
     ****************************************************************************/
+
+    app.showRegisterRow = function () {
+        app.registerRow.classList.remove("hide");
+    };
+    app.hideRegisterRow = function () {
+        app.registerRow.classList.add("hide");
+    };
+    app.showTergisterError = function () {
+        app.registerRow.classList.remove("hide");
+    };
 
     app.showLoginRow = function () {
         app.loginRow.classList.remove("hide");
