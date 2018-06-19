@@ -2,6 +2,9 @@ var config = {
     development: {
         url: 'localhost',
         port: 3000,
+        sms: {
+            apodo: 'factora2379'
+        },
         database: {
             host: 'localhost'.
             port: 3306,
@@ -14,6 +17,9 @@ var config = {
     test: {
         url: 'localhost',
         port: 8080,
+        sms: {
+            apodo: 'factora2379'
+        },
         database: {
             host: 'localhost'.
             port: 3306,
@@ -26,6 +32,9 @@ var config = {
     production: {
         url: 'localhost',
         port: 80,
+        sms: {
+            apodo: 'factora2379'
+        },
         database: {
             host: 'localhost'.
             port: 3306,
