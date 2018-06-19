@@ -1,9 +1,12 @@
 var mysql      = require('mysql');
+var env = process.env.NODE_ENV || 'development';
+var config = require('../config')[env];
+
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'Kalama2018',
-  database : 'cdc'
+    host     : config.database.host,
+    user     : config.database.username,
+    password : config.database.password,
+    database : config.database.name
 });
 
 var appRouter = function (app) {
