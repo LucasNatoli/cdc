@@ -9,7 +9,7 @@ var config = {
             host: 'localhost'.
             port: 3306,
             dialect: 'mysql',
-            db: 'cdc',
+            name: 'cdc',
             username: 'root',
             password: 'Kalama2018'
         }
@@ -24,7 +24,7 @@ var config = {
             host: 'localhost'.
             port: 3306,
             dialect: 'mysql',
-            db: 'cdc',
+            name: 'cdc',
             username: 'test',
             password: 'test'
         }
@@ -39,7 +39,7 @@ var config = {
             host: 'localhost'.
             port: 3306,
             dialect: 'mysql',
-            db: 'cdc',
+            name: 'cdc',
             username: 'web',
             password: 'web'
         }
