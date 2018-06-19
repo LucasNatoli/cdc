@@ -6,7 +6,7 @@ var config = {
             apodo: 'factora2379'
         },
         database: {
-            host: 'localhost'.
+            host: 'localhost',
             port: 3306,
             dialect: 'mysql',
             name: 'cdc',
@@ -21,7 +21,7 @@ var config = {
             apodo: 'factora2379'
         },
         database: {
-            host: 'localhost'.
+            host: 'localhost',
             port: 3306,
             dialect: 'mysql',
             name: 'cdc',
@@ -36,7 +36,7 @@ var config = {
             apodo: 'factora2379'
         },
         database: {
-            host: 'localhost'.
+            host: 'localhost',
             port: 3306,
             dialect: 'mysql',
             name: 'cdc',

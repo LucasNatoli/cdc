@@ -1,11 +1,13 @@
 var mysql = require('mysql');
 var request = require('request');
+var env = process.env.NODE_ENV || 'development';
+var config = require('./config')[env];
 
 var targetConn = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'Kalama2018',
-    database : 'cdc'
+    host     : config.database.host,
+    user     : config.database.username,
+    password : config.database.password,
+    database : config.database.name
 });
 
 var sql = `
@@ -14,15 +16,15 @@ var sql = `
     WHERE   estado=0`;
 var pin = Math.round(Math.random() * (98765 - 12345) + 12345);
 var mensajeSms = 'Central%20de%20Conbrazas:%20Su%20codigo%20de%20verificacion%20es:%20' + pin;
-//var url = 'http://www.nobilecomputacion.com.ar/smswww/listaentrante.php?apodo=factora2379&desde=01/01/2018%2000:01&hasta=21/03/2018%2019:00';
-//var url = 'http://www.nobilecomputacion.com.ar/smswww/ressmsxid.php?apodo=factora2379&identificador=CDC1';
+//var url = 'http://www.nobilecomputacion.com.ar/smswww/listaentrante.php?apodo=xxxxxxxxxxxdesde=01/01/2018%2000:01&hasta=21/03/2018%2019:00';
+//var url = 'http://www.nobilecomputacion.com.ar/smswww/ressmsxid.php?apodo=xxxxxx&identificador=CDC1';
 
 targetConn.query(sql, function (err, results, fields) {
     if (err) throw err;
     for (var i=0; i<results.length; i++){
         var cuentaId = results[i].id;
         var celular = results[i].celular;
-        var url = 'http://www.nobilecomputacion.com.ar/smswww/cargaremota.php?numero=' + celular + '&apodo=factora2379&mensaje=' + mensajeSms + '&idsms=CDC' + celular;
+        var url = 'http://www.nobilecomputacion.com.ar/smswww/cargaremota.php?numero=' + celular + '&apodo=' + config.sms.apodo + '&mensaje=' + mensajeSms + '&idsms=CDC' + celular;
         console.log('enviando mensaje a ' + celular);
         console.log(url);
 
